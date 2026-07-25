@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Unified Product Research Tracker",
+  "version": "1.0.0",
+  "description": "Reads public eBay browser pages and sends store/product/Purchase History data to the local dashboard. No eBay API keys are used.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.ebay.co.uk/*",
+    "https://*.ebay.com/*",
+    "http://127.0.0.1:8765/*",
+    "http://localhost:8765/*",
+    "https://*.alibaba.com/*"
+  ],
+  "action": {
+    "default_title": "Product Research Tracker",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.ebay.co.uk/*",
+        "https://*.ebay.com/*",
+        "https://*.alibaba.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

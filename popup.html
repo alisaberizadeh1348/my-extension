@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: Arial, sans-serif; width: 330px; padding: 12px; background:#0f172a; color:#e5e7eb; }
+    button { width: 100%; padding: 10px; margin: 6px 0; border: 0; border-radius: 8px; background: #0b65d8; color: white; cursor: pointer; font-weight:700; }
+    button.stop { background: #b91c1c; }
+    button.raw { background: #15803d; }
+    .muted { color:#94a3b8; font-size:12px; line-height:1.5; }
+    pre { white-space: pre-wrap; font-size: 12px; max-height: 220px; overflow:auto; background:#020617; border:1px solid #334155; border-radius:8px; padding:8px; color:#dbeafe; }
+  </style>
+</head>
+<body>
+  <h3>Product Research Tracker</h3>
+  <div style="margin:6px 0;padding:8px;border:1px solid #334155;border-radius:8px;background:#1e293b">
+    <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:4px">Gemini API Key</label>
+    <div style="display:flex;gap:6px">
+      <input id="geminiKeyInput" type="password" placeholder="AIza..." style="flex:1;background:#0f172a;color:#e5e7eb;border:1px solid #334155;border-radius:6px;padding:6px 8px;font-size:12px" autocomplete="off" />
+      <button id="saveGeminiKey" style="width:auto;padding:6px 10px;margin:0;background:#15803d;font-size:12px">Save</button>
+    </div>
+  </div>
+  <button id="extract">Extract products from this marketplace page</button>
+  <button class="fitting" id="extractFittings" style="background:#b45309">🔩 Extract Fittings from product page</button>
+  <button class="stop" id="stopScan">Stop automatic scan</button>
+  <p class="muted">Local server must be running on 127.0.0.1:8765</p>
+  <pre id="status">Ready.</pre>
+  <script src="popup.js"></script>
+</body>
+</html>
